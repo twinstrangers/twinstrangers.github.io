@@ -1,0 +1,105 @@
+==============
+User Interface
+==============
+
+Form Validation
+===============
+
+Sign-Up
+-------
+The `sign-up`_ page use `jQuery Form Validator`_ to check the form before being submitted to the server.
+
+.. image:: assets/sign_up_errors.png
+
+The user is only allowed to upload two photos of size < 2M.
+If the user tries to upload another file type she/he will be warned like so:
+
+.. image:: assets/sign_up_photo.png
+
+If a user does not fill in all the requiered fields, or make a mistake at some point (passwords/emails don't match, username/email already taken, the photos uploaded are too big or bad file type). She/he will be sent back to the top of the page, **without** reloading the page.
+
+.. note::
+    Those verifications are client-sided for a better ergonomie and to make life easier to the user.
+    Keep in mind that all those verifications have to be made on the server side too. So if you need to implement another verification start by implementing it on the server side first.
+
+.. _`sign-up`: http://twinstrangers.net/users/sign_up
+.. _`jQuery Form Validator`: http://formvalidator.net/
+
+Filter
+======
+
+Inside Page
+-----------
+When a user login to the website, she/he enter this page_ where she/he can look for their potential TwinStrangers using this filter.
+To increase the number of results a user can disable one or more facial features. Here if she/he unselect the eye shape option, she/he will be able to see users with or without an almond eye shape.
+
+.. image:: assets/search_twinstrangers.png
+
+.. note::
+    A user cannot find an admin, a locked user or users of the other gender.
+    The TwinStrangers and Admin Links in the navbar are not visible to normal users.
+
+.. _page: http://twinstrangers.net/inside
+
+Material Design
+===============
+
+Guideline
+---------
+
+.. only:: html
+
+    .. youtube:: Q8TXgCzxEnw
+        :width: 100%
+
+.. only:: latex
+
+    `Material Design Youtube video`_
+
+    .. _`Material Design Youtube video`: https://www.youtube.com/watch?v=Q8TXgCzxEnw
+
+BootStrap
+---------
+
+We use the theme Paper_ for bootstrap to give a nice Material Design touch to our website, without having to break the Bootstrap Layout.
+
+.. _Paper: http://bootswatch.com/paper
+
+Sign-Up
+-------
+
+Each facial feature is placed inside a Material Card to make a distinction between different features. Those options are in fact in the database, the user will not create a face shape instance but rather save the id of the one she/he selected on its table.
+
+.. image:: assets/sign_up_material.png
+
+
+Responsive Layout
+=================
+
+BootStrap
+---------
+
+Bootstrap_ is the most popular HTML, CSS, and JS framework for developing responsive, mobile first projects on the web.
+See here_ for more informations on the Grid System.
+
+.. _Bootstrap: http://getbootstrap.com
+.. _here: http://getbootstrap.com/css/#grid
+
+Sign-Up Page
+------------
+
+Each facial feature is placed inside a Card to make a distinction between different features.
+The user should be able to see all the possible options per facial feature. We use BootStrap Grid system to display two columns on smaller displays.
+
+.. image:: assets/sign_up_material_responsive.png
+
+Inside Page
+-----------
+
+When looking for their TwinStrangers on mobile, the users will be displayed their two photos side by side and their facial features in the filter as checkbox buttons. Note that the features being of different type we dissociate them visually using z-shadows.
+ 
+In the result the buttons Twin(to save the user) and Strangers(to hide it from the query) are still visible and big enought to be clicked with fingers. The user can click on the photos to have a bigger resolution.
+
+.. image:: assets/inside_material_responsive.png
+
+.. image:: assets/inside_result_material_responsive.png

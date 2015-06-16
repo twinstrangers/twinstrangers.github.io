@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>3. Administration &mdash; TwinStrangers 2015-06 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootswatch-3.2.0/paper/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '2015-06',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="TwinStrangers 2015-06 documentation" href="../../index.html" />
+    <link rel="next" title="4. The Database" href="../ch04/index.html" />
+    <link rel="prev" title="2. User Interface" href="../ch02/index.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body role="document">
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html">
+          TwinStrangers Doc</a>
+        <span class="navbar-text navbar-version pull-left"><b>2015-06</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../index.html">Chapters <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../ch01/index.html">1. Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ch02/index.html">2. User Interface</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">3. Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ch04/index.html">4. The Database</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">3. Administration</a><ul>
+<li><a class="reference internal" href="#find-a-user">3.1. Find a user</a><ul>
+<li><a class="reference internal" href="#display-the-user">3.1.1. Display the user</a></li>
+<li><a class="reference internal" href="#see-her-his-facial-features">3.1.2. See her/his facial features</a></li>
+<li><a class="reference internal" href="#see-her-his-twinfamily">3.1.3. See her/his TwinFamily</a></li>
+<li><a class="reference internal" href="#contact-their-twinstranger-s">3.1.4. Contact their TwinStranger(s)</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#moderation">3.2. Moderation</a><ul>
+<li><a class="reference internal" href="#ban-a-user">3.2.1. Ban a user</a></li>
+<li><a class="reference internal" href="#edit-an-account">3.2.2. Edit an account</a></li>
+<li><a class="reference internal" href="#remove-an-account">3.2.3. Remove an account</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#admin-panel">3.3. Admin Panel</a><ul>
+<li><a class="reference internal" href="#filters">3.3.1. Filters</a></li>
+<li><a class="reference internal" href="#unlock-user">3.3.2. Unlock user</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="../ch02/index.html" title="Previous Chapter: 2. User Interface"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; 2. User Interfac...</span>
+    </a>
+  </li>
+  <li>
+    <a href="../ch04/index.html" title="Next Chapter: 4. The Database"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">4. The Database &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+              <li class="hidden-sm"></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="administration">
+<h1>3. Administration<a class="headerlink" href="#administration" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="find-a-user">
+<h2>3.1. Find a user<a class="headerlink" href="#find-a-user" title="Permalink to this headline">¶</a></h2>
+<p>First you need to go to the <a class="reference external" href="http://twinstrangers.net/twinstrangers">TwinStrangers</a> page. (Logged as an admin of course)</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">You only need to know a username to find a user. But you can also find one with their name, firstname or email address.</p>
+</div>
+<img alt="../../_images/find_user.png" src="../../_images/find_user.png" />
+<div class="section" id="display-the-user">
+<h3>3.1.1. Display the user<a class="headerlink" href="#display-the-user" title="Permalink to this headline">¶</a></h3>
+<p>Just click on the show button to display the user profile page.</p>
+<img alt="../../_images/display_user.png" src="../../_images/display_user.png" />
+</div>
+<div class="section" id="see-her-his-facial-features">
+<h3>3.1.2. See her/his facial features<a class="headerlink" href="#see-her-his-facial-features" title="Permalink to this headline">¶</a></h3>
+<img alt="../../_images/display_facial_features.png" src="../../_images/display_facial_features.png" />
+</div>
+<div class="section" id="see-her-his-twinfamily">
+<h3>3.1.3. See her/his TwinFamily<a class="headerlink" href="#see-her-his-twinfamily" title="Permalink to this headline">¶</a></h3>
+<p>On the user profile page is displayed their twinfamily.
+See that the best ones are displayed with a gold star on the left.</p>
+<img alt="../../_images/display_twins.png" src="../../_images/display_twins.png" />
+</div>
+<div class="section" id="contact-their-twinstranger-s">
+<h3>3.1.4. Contact their TwinStranger(s)<a class="headerlink" href="#contact-their-twinstranger-s" title="Permalink to this headline">¶</a></h3>
+<p>You can generate an email template to make contact with the TwinStranger, just click on the small enveloppe to generate this email.
+It will be open in your email client to give you the option to modify it before sending it.
+Here Janine has found her TwinStranger Paula. We then send an email to Paula with the pictures of Janine.</p>
+<img alt="../../_images/contact_twin.png" src="../../_images/contact_twin.png" />
+</div>
+</div>
+<div class="section" id="moderation">
+<h2>3.2. Moderation<a class="headerlink" href="#moderation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="ban-a-user">
+<h3>3.2.1. Ban a user<a class="headerlink" href="#ban-a-user" title="Permalink to this headline">¶</a></h3>
+<p>When you find a user that you want to ban (it will actually lock their account).
+Just click on the lock on the right.</p>
+<img alt="../../_images/ban_user.png" src="../../_images/ban_user.png" />
+<p>A confirmation dialog will then appear to confirm the change.</p>
+<img alt="../../_images/ban_user_confirm.png" src="../../_images/ban_user_confirm.png" />
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you want to unlock a user it can be done in the <a class="reference external" href="http://twinstrangers.net/admin">Admin</a> panel.</p>
+</div>
+</div>
+<div class="section" id="edit-an-account">
+<h3>3.2.2. Edit an account<a class="headerlink" href="#edit-an-account" title="Permalink to this headline">¶</a></h3>
+<p>On a user profile you have a link to edit their account.</p>
+<img alt="../../_images/edit_user.png" src="../../_images/edit_user.png" />
+<p>You can then edit some of their informations and save by pressing the Update User button.</p>
+<img alt="../../_images/edit_user_form_head.png" src="../../_images/edit_user_form_head.png" />
+</div>
+<div class="section" id="remove-an-account">
+<h3>3.2.3. Remove an account<a class="headerlink" href="#remove-an-account" title="Permalink to this headline">¶</a></h3>
+<p>On the edit user form you will have a Destroy User button that do so.</p>
+<img alt="../../_images/edit_user_form_tail.png" src="../../_images/edit_user_form_tail.png" />
+<p>A confirmation dialog will then appear to confirm the change.</p>
+<img alt="../../_images/delete_user_confirm.png" src="../../_images/delete_user_confirm.png" />
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you delete an account, the user&#8217;s informations will be destroyed from the database.
+That means their is no way to retrieve it. You should rather use the locking option when a user violate the terms so that they cannot recreate an account.</p>
+</div>
+</div>
+</div>
+<div class="section" id="admin-panel">
+<h2>3.3. Admin Panel<a class="headerlink" href="#admin-panel" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="filters">
+<h3>3.3.1. Filters<a class="headerlink" href="#filters" title="Permalink to this headline">¶</a></h3>
+<p>You can use filters. Sort by name (asc/desc), last sign-in/sign-up. Filter by country, locked only, admin only, confirmed account only.
+You can of course find a user by username, email or name in the search bar.</p>
+<img alt="../../_images/admin_filter_lock.png" src="../../_images/admin_filter_lock.png" />
+</div>
+<div class="section" id="unlock-user">
+<h3>3.3.2. Unlock user<a class="headerlink" href="#unlock-user" title="Permalink to this headline">¶</a></h3>
+<p>If you locked a user by mistake you can undo it here:</p>
+<img alt="../../_images/admin_unlock_user.png" src="../../_images/admin_unlock_user.png" />
+<p>You will then be asked confirmation</p>
+<img alt="../../_images/admin_unlock_user_confirm.png" src="../../_images/admin_unlock_user_confirm.png" />
+</div>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2015, Cedric Bonhomme.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

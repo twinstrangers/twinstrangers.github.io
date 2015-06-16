@@ -1,0 +1,25 @@
+.. TwinStrangers documentation master file, created by
+   sphinx-quickstart on Fri May 29 10:58:52 2015.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+Documentation
+=============
+
+.. raw:: html
+
+    <h4>Welcome to the TwinStrangers.net documentation.</h4>
+    <p>Here you will find informations on how to get started working on the project.</p>
+    <p>How to use your admin account.</p>
+    <p>And of course the list of available features <a href="http://twinstrangers.net" target="_blank">twinstrangers.net</a> provides to its users.</p>
+
+.. rubric:: Content
+
+.. toctree::
+   :numbered:
+   :maxdepth: 2
+   
+   en/ch01/index
+   en/ch02/index
+   en/ch03/index
+   en/ch04/index

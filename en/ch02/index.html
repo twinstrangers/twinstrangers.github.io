@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>2. User Interface &mdash; TwinStrangers 2015-06 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootswatch-3.2.0/paper/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '2015-06',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="TwinStrangers 2015-06 documentation" href="../../index.html" />
+    <link rel="next" title="3. Administration" href="../ch03/index.html" />
+    <link rel="prev" title="1. Overview" href="../ch01/index.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body role="document">
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html">
+          TwinStrangers Doc</a>
+        <span class="navbar-text navbar-version pull-left"><b>2015-06</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../index.html">Chapters <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../ch01/index.html">1. Overview</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">2. User Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ch03/index.html">3. Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ch04/index.html">4. The Database</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">2. User Interface</a><ul>
+<li><a class="reference internal" href="#form-validation">2.1. Form Validation</a><ul>
+<li><a class="reference internal" href="#sign-up">2.1.1. Sign-Up</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#filter">2.2. Filter</a><ul>
+<li><a class="reference internal" href="#inside-page">2.2.1. Inside Page</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#material-design">2.3. Material Design</a><ul>
+<li><a class="reference internal" href="#guideline">2.3.1. Guideline</a></li>
+<li><a class="reference internal" href="#bootstrap">2.3.2. BootStrap</a></li>
+<li><a class="reference internal" href="#id2">2.3.3. Sign-Up</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#responsive-layout">2.4. Responsive Layout</a><ul>
+<li><a class="reference internal" href="#id3">2.4.1. BootStrap</a></li>
+<li><a class="reference internal" href="#sign-up-page">2.4.2. Sign-Up Page</a></li>
+<li><a class="reference internal" href="#id5">2.4.3. Inside Page</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="../ch01/index.html" title="Previous Chapter: 1. Overview"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; 1. Overview</span>
+    </a>
+  </li>
+  <li>
+    <a href="../ch03/index.html" title="Next Chapter: 3. Administration"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">3. Administratio... &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+              <li class="hidden-sm"></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="user-interface">
+<h1>2. User Interface<a class="headerlink" href="#user-interface" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="form-validation">
+<h2>2.1. Form Validation<a class="headerlink" href="#form-validation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="sign-up">
+<h3>2.1.1. Sign-Up<a class="headerlink" href="#sign-up" title="Permalink to this headline">¶</a></h3>
+<p>The <a class="reference external" href="http://twinstrangers.net/users/sign_up">sign-up</a> page use <a class="reference external" href="http://formvalidator.net/">jQuery Form Validator</a> to check the form before being submitted to the server.</p>
+<img alt="../../_images/sign_up_errors.png" src="../../_images/sign_up_errors.png" />
+<p>The user is only allowed to upload two photos of size &lt; 2M.
+If the user tries to upload another file type she/he will be warned like so:</p>
+<img alt="../../_images/sign_up_photo.png" src="../../_images/sign_up_photo.png" />
+<p>If a user does not fill in all the requiered fields, or make a mistake at some point (passwords/emails don&#8217;t match, username/email already taken, the photos uploaded are too big or bad file type). She/he will be sent back to the top of the page, <strong>without</strong> reloading the page.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Those verifications are client-sided for a better ergonomie and to make life easier to the user.
+Keep in mind that all those verifications have to be made on the server side too. So if you need to implement another verification start by implementing it on the server side first.</p>
+</div>
+</div>
+</div>
+<div class="section" id="filter">
+<h2>2.2. Filter<a class="headerlink" href="#filter" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="inside-page">
+<h3>2.2.1. Inside Page<a class="headerlink" href="#inside-page" title="Permalink to this headline">¶</a></h3>
+<p>When a user login to the website, she/he enter this <a class="reference external" href="http://twinstrangers.net/inside">page</a> where she/he can look for their potential TwinStrangers using this filter.
+To increase the number of results a user can disable one or more facial features. Here if she/he unselect the eye shape option, she/he will be able to see users with or without an almond eye shape.</p>
+<img alt="../../_images/search_twinstrangers.png" src="../../_images/search_twinstrangers.png" />
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">A user cannot find an admin, a locked user or users of the other gender.
+The TwinStrangers and Admin Links in the navbar are not visible to normal users.</p>
+</div>
+</div>
+</div>
+<div class="section" id="material-design">
+<h2>2.3. Material Design<a class="headerlink" href="#material-design" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="guideline">
+<h3>2.3.1. Guideline<a class="headerlink" href="#guideline" title="Permalink to this headline">¶</a></h3>
+<div class="embed-responsive embed-responsive-16by9">
+<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Q8TXgCzxEnw">
+</iframe></div></div>
+<div class="section" id="bootstrap">
+<h3>2.3.2. BootStrap<a class="headerlink" href="#bootstrap" title="Permalink to this headline">¶</a></h3>
+<p>We use the theme <a class="reference external" href="http://bootswatch.com/paper">Paper</a> for bootstrap to give a nice Material Design touch to our website, without having to break the Bootstrap Layout.</p>
+</div>
+<div class="section" id="id2">
+<h3>2.3.3. Sign-Up<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>Each facial feature is placed inside a Material Card to make a distinction between different features. Those options are in fact in the database, the user will not create a face shape instance but rather save the id of the one she/he selected on its table.</p>
+<img alt="../../_images/sign_up_material.png" src="../../_images/sign_up_material.png" />
+</div>
+</div>
+<div class="section" id="responsive-layout">
+<h2>2.4. Responsive Layout<a class="headerlink" href="#responsive-layout" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id3">
+<h3>2.4.1. BootStrap<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="http://getbootstrap.com">Bootstrap</a> is the most popular HTML, CSS, and JS framework for developing responsive, mobile first projects on the web.
+See <a class="reference external" href="http://getbootstrap.com/css/#grid">here</a> for more informations on the Grid System.</p>
+</div>
+<div class="section" id="sign-up-page">
+<h3>2.4.2. Sign-Up Page<a class="headerlink" href="#sign-up-page" title="Permalink to this headline">¶</a></h3>
+<p>Each facial feature is placed inside a Card to make a distinction between different features.
+The user should be able to see all the possible options per facial feature. We use BootStrap Grid system to display two columns on smaller displays.</p>
+<img alt="../../_images/sign_up_material_responsive.png" src="../../_images/sign_up_material_responsive.png" />
+</div>
+<div class="section" id="id5">
+<h3>2.4.3. Inside Page<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p>When looking for their TwinStrangers on mobile, the users will be displayed their two photos side by side and their facial features in the filter as checkbox buttons. Note that the features being of different type we dissociate them visually using z-shadows.</p>
+<p>In the result the buttons Twin(to save the user) and Strangers(to hide it from the query) are still visible and big enought to be clicked with fingers. The user can click on the photos to have a bigger resolution.</p>
+<img alt="../../_images/inside_material_responsive.png" src="../../_images/inside_material_responsive.png" />
+<img alt="../../_images/inside_result_material_responsive.png" src="../../_images/inside_result_material_responsive.png" />
+</div>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2015, Cedric Bonhomme.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>4. The Database &mdash; TwinStrangers 2015-06 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootswatch-3.2.0/paper/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '2015-06',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="TwinStrangers 2015-06 documentation" href="../../index.html" />
+    <link rel="prev" title="3. Administration" href="../ch03/index.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body role="document">
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html">
+          TwinStrangers Doc</a>
+        <span class="navbar-text navbar-version pull-left"><b>2015-06</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../index.html">Chapters <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../ch01/index.html">1. Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ch02/index.html">2. User Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ch03/index.html">3. Administration</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">4. The Database</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">4. The Database</a><ul>
+<li><a class="reference internal" href="#tables">4.1. Tables</a><ul>
+<li><a class="reference internal" href="#user">4.1.1. User</a></li>
+<li><a class="reference internal" href="#face">4.1.2. Face</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#diagram">4.2. Diagram</a><ul>
+<li><a class="reference internal" href="#simple">4.2.1. Simple</a></li>
+<li><a class="reference internal" href="#with-details">4.2.2. With Details</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#filters-scopes">4.3. Filters (scopes)</a><ul>
+<li><a class="reference internal" href="#id1">4.3.1. User</a><ul>
+<li><a class="reference internal" href="#friend-with">4.3.1.1. friend_with</a></li>
+<li><a class="reference internal" href="#facial-features">4.3.1.2. facial features</a></li>
+<li><a class="reference internal" href="#ethnicity">4.3.1.3. ethnicity</a></li>
+<li><a class="reference internal" href="#recap">4.3.1.4. recap</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#security">4.4. Security</a><ul>
+<li><a class="reference internal" href="#sanitize-the-database">4.4.1. Sanitize the database</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="../ch03/index.html" title="Previous Chapter: 3. Administration"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; 3. Administratio...</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+              <li class="hidden-sm"></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="the-database">
+<h1>4. The Database<a class="headerlink" href="#the-database" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="tables">
+<h2>4.1. Tables<a class="headerlink" href="#tables" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="user">
+<h3>4.1.1. User<a class="headerlink" href="#user" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ul class="simple">
+<li>has_one <strong>Face</strong>, destroy it with the user</li>
+<li>belongs_to an <strong>Ethnicity</strong></li>
+<li>has_many <strong>Photo</strong>, destroy them with the user</li>
+<li></li>
+<li>has_many <strong>Friendships</strong> (same for inverse_friendships)</li>
+<li>has_many <strong>Friends</strong> though <strong>Friendships</strong> (same for inverse_friendships, inverse_friends)</li>
+<li></li>
+<li>has_many <strong>Enmities</strong> (same for inverse_enmities)</li>
+<li>has_many <strong>Enemies</strong> though <strong>Enmities</strong> (same for inverse_enmities, inverse_enemies)</li>
+</ul>
+</div></blockquote>
+<div class="highlight-ruby"><div class="highlight"><pre><span class="k">class</span> <span class="nc">User</span> <span class="o">&lt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Base</span>
+    <span class="n">has_one</span> <span class="ss">:face</span><span class="p">,</span> <span class="ss">dependent</span><span class="p">:</span> <span class="ss">:destroy</span>
+    <span class="n">belongs_to</span> <span class="ss">:ethnicity</span>
+    <span class="n">has_many</span> <span class="ss">:photos</span><span class="p">,</span> <span class="ss">dependent</span><span class="p">:</span> <span class="ss">:destroy</span>
+
+    <span class="n">has_many</span> <span class="ss">:friendships</span><span class="p">,</span> <span class="ss">dependent</span><span class="p">:</span> <span class="ss">:destroy</span>
+    <span class="n">has_many</span> <span class="ss">:friends</span><span class="p">,</span> <span class="ss">:through</span> <span class="o">=&gt;</span> <span class="ss">:friendships</span>
+
+    <span class="n">has_many</span> <span class="ss">:enmities</span><span class="p">,</span> <span class="ss">dependent</span><span class="p">:</span> <span class="ss">:destroy</span>
+    <span class="n">has_many</span> <span class="ss">:enemies</span><span class="p">,</span> <span class="ss">:through</span> <span class="o">=&gt;</span> <span class="ss">:enmities</span>
+    <span class="o">...</span>
+<span class="k">end</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="face">
+<h3>4.1.2. Face<a class="headerlink" href="#face" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ul class="simple">
+<li>belongs_to <strong>User</strong></li>
+<li></li>
+<li>belongs_to <strong>Nose</strong></li>
+<li>belongs_to <strong>Mouth</strong></li>
+<li>belongs_to <strong>Eye</strong></li>
+<li>belongs_to <strong>Shape</strong></li>
+<li>belongs_to <strong>Eyebrow</strong></li>
+<li></li>
+<li>We validate the presence of each of these facial features.</li>
+</ul>
+</div></blockquote>
+<div class="highlight-ruby"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Face</span> <span class="o">&lt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Base</span>
+    <span class="n">belongs_to</span> <span class="ss">:user</span>
+
+    <span class="n">belongs_to</span> <span class="ss">:nose</span>
+    <span class="n">belongs_to</span> <span class="ss">:mouth</span>
+    <span class="n">belongs_to</span> <span class="ss">:eye</span>
+    <span class="n">belongs_to</span> <span class="ss">:shape</span>
+    <span class="n">belongs_to</span> <span class="ss">:eyebrow</span>
+
+    <span class="n">validates</span> <span class="ss">:mouth_id</span><span class="p">,</span> <span class="ss">presence</span><span class="p">:</span> <span class="kp">true</span>
+    <span class="n">validates</span> <span class="ss">:shape_id</span><span class="p">,</span> <span class="ss">presence</span><span class="p">:</span> <span class="kp">true</span>
+    <span class="n">validates</span> <span class="ss">:nose_id</span><span class="p">,</span> <span class="ss">presence</span><span class="p">:</span> <span class="kp">true</span>
+    <span class="n">validates</span> <span class="ss">:eye_id</span><span class="p">,</span> <span class="ss">presence</span><span class="p">:</span> <span class="kp">true</span>
+    <span class="n">validates</span> <span class="ss">:eyebrow_id</span><span class="p">,</span> <span class="ss">presence</span><span class="p">:</span> <span class="kp">true</span>
+<span class="k">end</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">We use <code class="docutils literal"><span class="pre">belongs_to</span></code> instead of <code class="docutils literal"><span class="pre">has_one</span></code> because we store the <code class="docutils literal"><span class="pre">foreign</span> <span class="pre">keys</span></code> into the <code class="docutils literal"><span class="pre">Face</span></code> Table. A User do not create a Nose, she/he just pick one from the existing ones.(that is why we only save the foreign key hence the belongs_to association)</p>
+</div>
+</div>
+</div>
+<div class="section" id="diagram">
+<h2>4.2. Diagram<a class="headerlink" href="#diagram" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="simple">
+<h3>4.2.1. Simple<a class="headerlink" href="#simple" title="Permalink to this headline">¶</a></h3>
+<img alt="../../_images/diagram_simple.png" src="../../_images/diagram_simple.png" />
+</div>
+<div class="section" id="with-details">
+<h3>4.2.2. With Details<a class="headerlink" href="#with-details" title="Permalink to this headline">¶</a></h3>
+<img alt="../../_images/diagram1.png" src="../../_images/diagram1.png" />
+</div>
+</div>
+<div class="section" id="filters-scopes">
+<h2>4.3. Filters (scopes)<a class="headerlink" href="#filters-scopes" title="Permalink to this headline">¶</a></h2>
+<p>Rails gives us the possibility to write <a class="reference external" href="http://api.rubyonrails.org/classes/ActiveRecord/Scoping/Named/ClassMethods.html">scopes</a> inside our <a class="reference external" href="http://guides.rubyonrails.org/active_record_basics.html">ActiveRecord</a> Model.
+Scopes are usefull to make filters, as the one used to find your TwinStranger, or as an admin to find a user.
+Here are some scopes that we use to filter the database.</p>
+<div class="section" id="id1">
+<h3>4.3.1. User<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="friend-with">
+<h4>4.3.1.1. friend_with<a class="headerlink" href="#friend-with" title="Permalink to this headline">¶</a></h4>
+<p>The friend_with method tell us if another user is friend with the current_user.
+We can also create a def (method in Ruby) to use the scope in our <code class="docutils literal"><span class="pre">View</span></code>.</p>
+<div class="highlight-ruby"><div class="highlight"><pre><span class="n">scope</span> <span class="ss">:friend_with</span><span class="p">,</span> <span class="o">-&gt;</span><span class="p">(</span><span class="n">other</span><span class="p">)</span> <span class="k">do</span>
+    <span class="n">other</span> <span class="o">=</span> <span class="n">other</span><span class="o">.</span><span class="n">id</span> <span class="k">if</span> <span class="n">other</span><span class="o">.</span><span class="n">is_a?</span><span class="p">(</span><span class="no">User</span><span class="p">)</span>
+    <span class="n">where</span><span class="p">(</span><span class="s1">&#39;friendships.user_id = users.id AND friendships.friend_id = ?&#39;</span><span class="p">),</span> <span class="n">other</span><span class="p">)</span><span class="o">.</span><span class="n">joins</span><span class="p">(</span><span class="ss">:friendships</span><span class="p">)</span>
+<span class="k">end</span>
+
+<span class="k">def</span> <span class="nf">friend_with?</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+    <span class="no">User</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="nb">id</span><span class="p">:</span> <span class="nb">id</span><span class="p">)</span><span class="o">.</span><span class="n">friend_with</span><span class="p">(</span><span class="n">other</span><span class="p">)</span><span class="o">.</span><span class="n">any?</span>
+<span class="k">end</span>
+</pre></div>
+</div>
+<p>This scope let us hide the add friendship and add enmity buttons in our <code class="docutils literal"><span class="pre">View</span></code> for a <code class="docutils literal"><span class="pre">User</span></code> that is already a <code class="docutils literal"><span class="pre">friend</span></code>.</p>
+<img alt="../../_images/scope_inside.png" src="../../_images/scope_inside.png" />
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If a user tried to add a add friendship button on the view, she/he will not succeed in adding a friend a second time because we check the unicity of the association.
+(on the database with an index and on our Ruby On Rails application too).
+The user will only have a flash with the message &#8220;Unable to save Twin&#8221;.</p>
+</div>
+<p>Here is the code of our <code class="docutils literal"><span class="pre">Friendship</span></code> class:
+We are using a scope to check the unicity of a pair (user, friend), a friendship between the <code class="docutils literal"><span class="pre">user</span></code> and a <code class="docutils literal"><span class="pre">friend</span></code> is unique.</p>
+<div class="highlight-ruby"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Friendship</span> <span class="o">&lt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Base</span>
+    <span class="n">belongs_to</span> <span class="ss">:user</span>
+    <span class="n">belongs_to</span> <span class="ss">:friend</span><span class="p">,</span> <span class="ss">:class_name</span> <span class="o">=&gt;</span> <span class="s2">&quot;User&quot;</span>
+
+    <span class="n">validates_uniqueness_of</span> <span class="ss">:user</span><span class="p">,</span> <span class="ss">:scope</span> <span class="o">=&gt;</span> <span class="ss">:friend</span>
+<span class="k">end</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="facial-features">
+<h4>4.3.1.2. facial features<a class="headerlink" href="#facial-features" title="Permalink to this headline">¶</a></h4>
+<p>We can make scopes to filter <code class="docutils literal"><span class="pre">Users</span></code> sharing or not the same facial features</p>
+<div class="highlight-ruby"><div class="highlight"><pre><span class="k">class</span> <span class="nc">User</span> <span class="o">&lt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Base</span>
+    <span class="n">scope</span> <span class="ss">:with_face_nose_id</span><span class="p">,</span> <span class="nb">lambda</span> <span class="p">{</span> <span class="o">|</span><span class="n">nose_id</span><span class="o">|</span>
+                        <span class="k">return</span> <span class="k">if</span> <span class="n">nose_id</span> <span class="o">==</span> <span class="s1">&#39;0&#39;</span>
+                        <span class="n">joins</span><span class="p">(</span><span class="ss">:face</span><span class="p">)</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s1">&#39;faces.nose_id = ?&#39;</span><span class="p">,</span> <span class="n">nose_id</span><span class="p">)</span>
+                      <span class="p">}</span>
+    <span class="o">...</span>
+<span class="k">end</span>
+</pre></div>
+</div>
+<img alt="../../_images/scope_facial_features.png" src="../../_images/scope_facial_features.png" />
+<p>In our <code class="docutils literal"><span class="pre">View</span></code> we set the checkboxes to send the id of the feature instead of the default 1 (3rd option in the check_box method). 0 is receive when a checkboxe is unchecked.</p>
+<div class="highlight-haml"><div class="highlight"><pre><span class="p">=</span> <span class="n">form_for_filterrific</span> <span class="vi">@filterrific</span> <span class="k">do</span> <span class="o">|</span><span class="n">f</span><span class="o">|</span>
+  <span class="nc">.row</span>
+    <span class="nc">.col-xs-6.col-sm-4</span>
+      <span class="nc">.form-group.chardin_box</span><span class="p">{</span> <span class="ss">:&#39;data-position&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;top&#39;</span><span class="p">,</span> <span class="ss">:&#39;data-intro&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Filter by Face Shape.&#39;</span> <span class="p">}</span>
+        <span class="nc">.btn.btn-default.btn-block</span>
+          <span class="nt">%label</span>
+            <span class="p">=</span> <span class="n">inline_svg</span><span class="p">(</span><span class="s1">&#39;shape/&#39;</span><span class="o">+</span> <span class="vi">@user</span><span class="o">.</span><span class="n">face</span><span class="o">.</span><span class="n">shape</span><span class="o">.</span><span class="n">description</span><span class="o">+</span><span class="s1">&#39;.svg&#39;</span><span class="p">,</span> <span class="ss">size</span><span class="p">:</span> <span class="s1">&#39;200px * 100px&#39;</span><span class="p">,</span> <span class="ss">class</span><span class="p">:</span> <span class="s1">&#39;img-responsive&#39;</span><span class="p">)</span>
+            <span class="p">=</span> <span class="n">f</span><span class="o">.</span><span class="n">check_box</span> <span class="ss">:with_face_shape_id</span><span class="p">,</span> <span class="p">{},</span> <span class="vi">@user</span><span class="o">.</span><span class="n">face</span><span class="o">.</span><span class="n">shape_id</span>
+    ...
+</pre></div>
+</div>
+<p>We want the user to have her/his facial features displayed so we initialize <code class="docutils literal"><span class="pre">with_face_shape_id</span></code> in <code class="docutils literal"><span class="pre">:default_filter_params</span></code>.
+The <code class="docutils literal"><span class="pre">:select_options</span></code> is only present if we want to display all the face shape in a dropdown menu.</p>
+<div class="highlight-ruby"><div class="highlight"><pre><span class="k">class</span> <span class="nc">PagesController</span> <span class="o">&lt;</span> <span class="no">ApplicationController</span>
+    <span class="o">...</span>
+    <span class="k">def</span> <span class="nf">inside</span>
+        <span class="vi">@user</span> <span class="o">=</span> <span class="n">current_user</span>
+
+        <span class="vi">@filterrific</span> <span class="o">=</span> <span class="n">initialize_filterrific</span><span class="p">(</span>
+            <span class="no">User</span><span class="p">,</span>
+            <span class="n">params</span><span class="o">[</span><span class="ss">:filterrific</span><span class="o">]</span><span class="p">,</span>
+            <span class="ss">:select_options</span> <span class="o">=&gt;</span> <span class="p">{</span>
+                <span class="ss">with_face_shape_id</span><span class="p">:</span> <span class="no">Shape</span><span class="o">.</span><span class="n">options_for_select</span><span class="p">,</span>
+                <span class="o">...</span>
+            <span class="p">},</span>
+            <span class="ss">:default_filter_params</span> <span class="o">=&gt;</span> <span class="p">{</span>
+                <span class="ss">with_face_shape_id</span><span class="p">:</span> <span class="vi">@user</span><span class="o">.</span><span class="n">face</span><span class="o">.</span><span class="n">shape_id</span><span class="p">,</span>
+                <span class="o">...</span>
+            <span class="p">}</span>
+        <span class="p">)</span> <span class="ow">or</span> <span class="k">return</span>
+        <span class="vi">@users</span> <span class="o">=</span> <span class="vi">@filterrific</span><span class="o">.</span><span class="n">find</span><span class="o">.</span><span class="n">page</span><span class="p">(</span><span class="n">params</span><span class="o">[</span><span class="ss">:page</span><span class="o">]</span><span class="p">)</span>
+        <span class="o">...</span>
+    <span class="k">end</span>
+    <span class="o">...</span>
+<span class="k">end</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">We use the <a class="reference external" href="http://filterrific.clearcove.ca/">filterrific</a> gem to render beautiful and well integrated filters.</p>
+</div>
+</div>
+<div class="section" id="ethnicity">
+<h4>4.3.1.3. ethnicity<a class="headerlink" href="#ethnicity" title="Permalink to this headline">¶</a></h4>
+<p>The scope used to filter <code class="docutils literal"><span class="pre">Users</span></code> by ethnicity.</p>
+<div class="highlight-ruby"><div class="highlight"><pre><span class="k">class</span> <span class="nc">User</span> <span class="o">&lt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Base</span>
+    <span class="n">scope</span> <span class="ss">:with_ethnicity_id</span><span class="p">,</span> <span class="nb">lambda</span> <span class="p">{</span> <span class="o">|</span><span class="n">ethnicity_ids</span><span class="o">|</span>
+                            <span class="n">where</span><span class="p">(</span><span class="ss">ethnicity_id</span><span class="p">:</span> <span class="o">[*</span><span class="n">ethnicity_ids</span><span class="o">]</span><span class="p">)</span>
+                        <span class="p">}</span>
+    <span class="o">...</span>
+<span class="k">end</span>
+</pre></div>
+</div>
+<p>In our view we have:</p>
+<div class="highlight-haml"><div class="highlight"><pre><span class="p">=</span> <span class="n">form_for_filterrific</span> <span class="vi">@filterrific</span> <span class="k">do</span> <span class="o">|</span><span class="n">f</span><span class="o">|</span>
+  <span class="nc">.row</span>
+    <span class="nc">.col-md-3</span>
+      <span class="nc">.form-group.chardin_box</span><span class="p">{</span> <span class="ss">:&#39;data-position&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;top&#39;</span><span class="p">,</span> <span class="ss">:&#39;data-intro&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Filter by ethnicity.&#39;</span> <span class="p">}</span>
+        <span class="nt">%label</span> Ethnicity
+        <span class="p">=</span> <span class="n">f</span><span class="o">.</span><span class="n">select</span> <span class="ss">:with_ethnicity_id</span><span class="p">,</span>
+                   <span class="vi">@filterrific</span><span class="o">.</span><span class="n">select_options</span><span class="o">[</span><span class="ss">:with_ethnicity_id</span><span class="o">]</span><span class="p">,</span>
+                   <span class="p">{</span> <span class="ss">:include_blank</span> <span class="o">=&gt;</span> <span class="s1">&#39;- Any -&#39;</span> <span class="p">},</span>
+                   <span class="p">{</span> <span class="ss">:class</span> <span class="o">=&gt;</span> <span class="s1">&#39;form-control&#39;</span> <span class="p">}</span>
+</pre></div>
+</div>
+<img alt="../../_images/scope_ethnicity.png" src="../../_images/scope_ethnicity.png" />
+<img alt="../../_images/scope_ethnicity_dropdown.png" src="../../_images/scope_ethnicity_dropdown.png" />
+<p>And to display the list of all ethnicity in a dropdown as above we had to add this method inside <code class="docutils literal"><span class="pre">Ethnicity</span></code></p>
+<div class="highlight-ruby"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Ethnicity</span> <span class="o">&lt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Base</span>
+    <span class="n">has_many</span> <span class="ss">:users</span>
+    <span class="c1"># Map the list of ethnicities</span>
+    <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">options_for_select</span>
+        <span class="n">order</span><span class="p">(</span><span class="s1">&#39;LOWER(description)&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="o">|</span><span class="n">e</span><span class="o">|</span> <span class="o">[</span><span class="n">e</span><span class="o">.</span><span class="n">description</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">id</span><span class="o">]</span> <span class="p">}</span>
+    <span class="k">end</span>
+<span class="k">end</span>
+</pre></div>
+</div>
+<p>In our <code class="docutils literal"><span class="pre">PagesController</span></code> we populate the dropdown menu with the <code class="docutils literal"><span class="pre">options_for_select</span></code> method from <code class="docutils literal"><span class="pre">Ethnicity</span></code> that we just created.
+This is done with setting <code class="docutils literal"><span class="pre">with_ethnicity_id</span></code> in <code class="docutils literal"><span class="pre">:select_options</span></code>. We want the user to have her/his ethnicity selected by default, this is done by setting <code class="docutils literal"><span class="pre">with_ethnicity_id</span></code> in <code class="docutils literal"><span class="pre">:default_filter_params</span></code> as follow:</p>
+<div class="highlight-ruby"><div class="highlight"><pre><span class="k">class</span> <span class="nc">PagesController</span> <span class="o">&lt;</span> <span class="no">ApplicationController</span>
+    <span class="o">...</span>
+    <span class="k">def</span> <span class="nf">inside</span>
+        <span class="vi">@user</span> <span class="o">=</span> <span class="n">current_user</span>
+
+        <span class="vi">@filterrific</span> <span class="o">=</span> <span class="n">initialize_filterrific</span><span class="p">(</span>
+            <span class="no">User</span><span class="p">,</span>
+            <span class="n">params</span><span class="o">[</span><span class="ss">:filterrific</span><span class="o">]</span><span class="p">,</span>
+            <span class="ss">:select_options</span> <span class="o">=&gt;</span> <span class="p">{</span>
+                <span class="ss">with_ethnicity_id</span><span class="p">:</span> <span class="no">Ethnicity</span><span class="o">.</span><span class="n">options_for_select</span>
+            <span class="p">},</span>
+            <span class="ss">:default_filter_params</span> <span class="o">=&gt;</span> <span class="p">{</span>
+                <span class="ss">with_ethnicity_id</span><span class="p">:</span> <span class="vi">@user</span><span class="o">.</span><span class="n">ethnicity_id</span>
+            <span class="p">}</span>
+        <span class="p">)</span> <span class="ow">or</span> <span class="k">return</span>
+        <span class="vi">@users</span> <span class="o">=</span> <span class="vi">@filterrific</span><span class="o">.</span><span class="n">find</span><span class="o">.</span><span class="n">page</span><span class="p">(</span><span class="n">params</span><span class="o">[</span><span class="ss">:page</span><span class="o">]</span><span class="p">)</span>
+        <span class="o">...</span>
+    <span class="k">end</span>
+    <span class="o">...</span>
+<span class="k">end</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="recap">
+<h4>4.3.1.4. recap<a class="headerlink" href="#recap" title="Permalink to this headline">¶</a></h4>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This is how our <code class="docutils literal"><span class="pre">PagesController</span></code> looks like with all the filters.
+By default we hide <code class="docutils literal"><span class="pre">admin</span></code> accounts, <code class="docutils literal"><span class="pre">locked</span></code> users and only display users <code class="docutils literal"><span class="pre">confirmed</span></code> and of the <code class="docutils literal"><span class="pre">same</span> <span class="pre">gender</span></code>. Those options are non negotiable for the user.
+However the user can change the <code class="docutils literal"><span class="pre">facial</span> <span class="pre">features</span></code>, <code class="docutils literal"><span class="pre">age</span> <span class="pre">range</span></code> and <code class="docutils literal"><span class="pre">ethnicity</span></code> parameters.</p>
+</div>
+<div class="highlight-ruby"><div class="highlight"><pre><span class="k">class</span> <span class="nc">PagesController</span> <span class="o">&lt;</span> <span class="no">ApplicationController</span>
+    <span class="n">before_action</span> <span class="ss">:authenticate_user!</span><span class="p">,</span>
+            <span class="ss">only</span><span class="p">:</span> <span class="o">[</span>
+                <span class="ss">:inside</span>
+            <span class="o">]</span>
+    <span class="o">...</span>
+
+    <span class="k">def</span> <span class="nf">inside</span>
+        <span class="vi">@user</span> <span class="o">=</span> <span class="n">current_user</span>
+
+        <span class="vi">@filterrific</span> <span class="o">=</span> <span class="n">initialize_filterrific</span><span class="p">(</span>
+            <span class="no">User</span><span class="p">,</span>
+            <span class="n">params</span><span class="o">[</span><span class="ss">:filterrific</span><span class="o">]</span><span class="p">,</span>
+            <span class="ss">:select_options</span> <span class="o">=&gt;</span> <span class="p">{</span>
+                <span class="ss">age_lt</span><span class="p">:</span> <span class="mi">13</span><span class="o">..</span><span class="mi">100</span><span class="p">,</span>
+                <span class="ss">age_gte</span><span class="p">:</span> <span class="mi">13</span><span class="o">..</span><span class="mi">100</span><span class="p">,</span>
+                <span class="ss">with_face_shape_id</span><span class="p">:</span> <span class="no">Shape</span><span class="o">.</span><span class="n">options_for_select</span><span class="p">,</span>
+                <span class="ss">with_face_eyebrow_id</span><span class="p">:</span> <span class="no">Eyebrow</span><span class="o">.</span><span class="n">options_for_select</span><span class="p">,</span>
+                <span class="ss">with_face_eye_id</span><span class="p">:</span> <span class="no">Eye</span><span class="o">.</span><span class="n">options_for_select</span><span class="p">,</span>
+                <span class="ss">with_face_nose_id</span><span class="p">:</span> <span class="no">Nose</span><span class="o">.</span><span class="n">options_for_select</span><span class="p">,</span>
+                <span class="ss">with_face_mouth_id</span><span class="p">:</span> <span class="no">Mouth</span><span class="o">.</span><span class="n">options_for_select</span><span class="p">,</span>
+                <span class="ss">with_ethnicity_id</span><span class="p">:</span> <span class="no">Ethnicity</span><span class="o">.</span><span class="n">options_for_select</span>
+            <span class="p">},</span>
+            <span class="ss">:default_filter_params</span> <span class="o">=&gt;</span> <span class="p">{</span>
+                <span class="ss">with_face_shape_id</span><span class="p">:</span> <span class="vi">@user</span><span class="o">.</span><span class="n">face</span><span class="o">.</span><span class="n">shape_id</span><span class="p">,</span>
+                <span class="ss">with_face_eyebrow_id</span><span class="p">:</span> <span class="vi">@user</span><span class="o">.</span><span class="n">face</span><span class="o">.</span><span class="n">eyebrow_id</span><span class="p">,</span>
+                <span class="ss">with_face_eye_id</span><span class="p">:</span> <span class="vi">@user</span><span class="o">.</span><span class="n">face</span><span class="o">.</span><span class="n">eye_id</span><span class="p">,</span>
+                <span class="ss">with_face_nose_id</span><span class="p">:</span> <span class="vi">@user</span><span class="o">.</span><span class="n">face</span><span class="o">.</span><span class="n">nose_id</span><span class="p">,</span>
+                <span class="ss">with_face_mouth_id</span><span class="p">:</span> <span class="vi">@user</span><span class="o">.</span><span class="n">face</span><span class="o">.</span><span class="n">mouth_id</span><span class="p">,</span>
+                <span class="ss">with_ethnicity_id</span><span class="p">:</span> <span class="vi">@user</span><span class="o">.</span><span class="n">ethnicity_id</span><span class="p">,</span>
+                <span class="ss">with_gender</span><span class="p">:</span> <span class="vi">@user</span><span class="o">.</span><span class="n">sex</span><span class="p">,</span>
+                <span class="ss">with_admin_only</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                <span class="ss">with_locked_only</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                <span class="ss">with_confirmed_only</span><span class="p">:</span> <span class="mi">1</span>
+            <span class="p">}</span>
+        <span class="p">)</span> <span class="ow">or</span> <span class="k">return</span>
+        <span class="vi">@users</span> <span class="o">=</span> <span class="vi">@filterrific</span><span class="o">.</span><span class="n">find</span><span class="o">.</span><span class="n">page</span><span class="p">(</span><span class="n">params</span><span class="o">[</span><span class="ss">:page</span><span class="o">]</span><span class="p">)</span>
+
+        <span class="n">respond_to</span> <span class="k">do</span> <span class="o">|</span><span class="nb">format</span><span class="o">|</span>
+            <span class="nb">format</span><span class="o">.</span><span class="n">html</span>
+            <span class="nb">format</span><span class="o">.</span><span class="n">js</span>
+        <span class="k">end</span>
+
+    <span class="k">rescue</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">RecordNotFound</span> <span class="o">=&gt;</span> <span class="n">e</span>
+        <span class="nb">puts</span> <span class="s2">&quot;Had to reset filterrific params: </span><span class="si">#{</span> <span class="n">e</span><span class="o">.</span><span class="n">message</span> <span class="si">}</span><span class="s2">&quot;</span>
+        <span class="n">redirect_to</span><span class="p">(</span><span class="n">reset_filterrific_url</span><span class="p">(</span><span class="nb">format</span><span class="p">:</span> <span class="ss">:html</span><span class="p">))</span> <span class="ow">and</span> <span class="k">return</span>
+    <span class="k">end</span>
+    <span class="o">...</span>
+<span class="k">end</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="security">
+<h2>4.4. Security<a class="headerlink" href="#security" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="sanitize-the-database">
+<h3>4.4.1. Sanitize the database<a class="headerlink" href="#sanitize-the-database" title="Permalink to this headline">¶</a></h3>
+<p>The application does not allows SQL Injection, here is a comic by <a class="reference external" href="http://xkcd.com/327/">XKCD</a> explaining the problem:</p>
+<img alt="../../_images/exploits_of_a_mom.png" src="../../_images/exploits_of_a_mom.png" />
+<dl class="docutils">
+<dt>In our scopes we have to follow this guideline:</dt>
+<dd><ul class="first last simple">
+<li>OK: where(country_id: param)</li>
+<li>OK: where(&#8216;students.country_id = ?&#8217;, param)</li>
+<li>BAD: where(&#8220;students.country_id = &#8216;#{ param }&#8217;&#8221;) : security flaw, the user can make an SQL Injection</li>
+</ul>
+</dd>
+</dl>
+<p>More info about Sql injection and Rails: <a class="reference external" href="http://guides.rubyonrails.org/security.html#sql-injection">Rails doc</a></p>
+</div>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2015, Cedric Bonhomme.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

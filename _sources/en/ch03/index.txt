@@ -1,0 +1,104 @@
+==============
+Administration
+==============
+
+Find a user
+===========
+First you need to go to the TwinStrangers_ page. (Logged as an admin of course)
+
+.. note::
+    You only need to know a username to find a user. But you can also find one with their name, firstname or email address.
+
+.. image::  assets/find_user.png
+
+.. _TwinStrangers: http://twinstrangers.net/twinstrangers
+
+Display the user
+----------------
+Just click on the show button to display the user profile page.
+
+.. image:: assets/display_user.png
+
+See her/his facial features
+---------------------------
+
+.. image:: assets/display_facial_features.png
+
+See her/his TwinFamily
+----------------------
+On the user profile page is displayed their twinfamily.
+See that the best ones are displayed with a gold star on the left.
+
+.. image:: assets/display_twins.png
+
+Contact their TwinStranger(s)
+-----------------------------
+You can generate an email template to make contact with the TwinStranger, just click on the small enveloppe to generate this email.
+It will be open in your email client to give you the option to modify it before sending it.
+Here Janine has found her TwinStranger Paula. We then send an email to Paula with the pictures of Janine. 
+
+.. image:: assets/contact_twin.png
+
+Moderation
+==========
+
+Ban a user
+----------
+When you find a user that you want to ban (it will actually lock their account).
+Just click on the lock on the right.
+
+.. image:: assets/ban_user.png
+
+A confirmation dialog will then appear to confirm the change.
+
+.. image:: assets/ban_user_confirm.png
+
+.. note::
+    If you want to unlock a user it can be done in the Admin_ panel.
+
+.. _Admin: http://twinstrangers.net/admin
+
+Edit an account
+---------------
+On a user profile you have a link to edit their account.
+
+.. image:: assets/edit_user.png
+
+You can then edit some of their informations and save by pressing the Update User button.
+
+.. image:: assets/edit_user_form_head.png
+
+
+Remove an account
+-----------------
+On the edit user form you will have a Destroy User button that do so.
+
+.. image:: assets/edit_user_form_tail.png
+
+A confirmation dialog will then appear to confirm the change.
+
+.. image:: assets/delete_user_confirm.png
+
+.. note::
+    If you delete an account, the user's informations will be destroyed from the database.
+    That means their is no way to retrieve it. You should rather use the locking option when a user violate the terms so that they cannot recreate an account.
+    
+Admin Panel
+===========
+
+Filters
+-------
+You can use filters. Sort by name (asc/desc), last sign-in/sign-up. Filter by country, locked only, admin only, confirmed account only.
+You can of course find a user by username, email or name in the search bar.
+
+.. image:: assets/admin_filter_lock.png
+
+Unlock user
+-----------
+If you locked a user by mistake you can undo it here:
+
+.. image:: assets/admin_unlock_user.png
+
+You will then be asked confirmation
+
+.. image:: assets/admin_unlock_user_confirm.png
