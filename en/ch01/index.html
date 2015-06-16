@@ -222,12 +222,7 @@ List of Services Used:</p>
 <li><strong>S3</strong>: Cloud Storage for users&#8217; photos.</li>
 <li><strong>SES</strong>: Smtp email sender, allow us to send emails to more than 2000 users a day (gmail limit), emails are necessary for registrations.</li>
 <li><strong>Route 53</strong>: DNS routes, redirections to our Ruby On Rails application.</li>
-</ul>
-</div></blockquote>
-<p>To improve the availability of the website, if the server start to slow down under a lot of connections it might be time to go for a multi-server configuration and you should have a look at these services:</p>
-<blockquote>
-<div><ul class="simple">
-<li><strong>ElastiCache</strong>: Use this service to share <strong>session cache</strong>. You have to use it if you want to set-up a multiple server configuration, or else you will have authentification token problems, you will have to configure Devise to generate authenticity token with this service.See <a class="reference external" href="https://google.com/search?q=elasticache+rails">ElastiCache with Devise</a>. Currently the website only support 1 server.</li>
+<li><strong>ElastiCache</strong>: Allow us to share <strong>session cache</strong>. You have to use it if you want to set-up a multiple server configuration, or else you will have authentification token problems, session cache and authentification tokens are stored into the service. See <a class="reference external" href="https://google.com/search?q=elasticache+rails">ElastiCache with Devise</a>. Currently the website only support 1 server.</li>
 </ul>
 </div></blockquote>
 </div>
